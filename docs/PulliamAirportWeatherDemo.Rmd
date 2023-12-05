@@ -1,0 +1,32 @@
+---
+title: "PulliamAirportWeatherDemo"
+author: "Nathan Underwood"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r Snow Each Day in February 2019}
+library(UnderwoodChapter16)
+library(ggplot2)
+
+PulliamAirportWeather2019 <- PulliamAirportWeather %>% 
+  filter(year(DATE) == 2019 & month(DATE) == 2) %>% 
+  mutate(DAY = day(DATE))
+
+ggplot(PulliamAirportWeather2019, aes(x = DAY, y = SNOW)) +
+  geom_point()
+```
+
+```{r Min Temperatures Each Day in July 2000}
+library(UnderwoodChapter16)
+library(ggplot2)
+
+PulliamAirportWeather2000 <- PulliamAirportWeather %>% 
+  filter(year(DATE) == 2000 & month(DATE) == 7) %>% 
+  mutate(DAY = day(DATE)) %>% 
+  group_by(TMIN, TMAX)
+
+ggplot(PulliamAirportWeather2019, aes(x = DAY, y = TMIN)) +
+  geom_point() +
+  geom_line()
+```
