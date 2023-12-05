@@ -7,7 +7,7 @@
 FizzBuzz(x)
 }
 \arguments{
-\item{x}{A vector of integers}
+\item{\code{x}}{A vector of integers}
 }
 \value{
 The Fizz Buzz-ification of \code{x}
@@ -19,8 +19,8 @@ output will show which integers are divisible by which numbers.
 \details{
 If an integer is divisible by three, it will be converted to "Fizz".
 If an integer is divisible by five, it will be converted to "Buzz".
-If an integer is divisible by both three and five (or fifteen), then it will
-be converted to "Fizz Buzz".
+If an integer is divisible by both three and five, then it will be converted
+to "Fizz Buzz".
 }
 \examples{
 smallVector <- c(1:30)
